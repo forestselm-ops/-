@@ -1,0 +1,331 @@
+/* ==========================================================================
+   1. ルート変数（色やサイズをまとめて管理する共通設定）
+   ========================================================================== */
+:root {
+    --primary-color: #2c3e50;       /* ヘッダーや主要見出しの深みのある青色 */
+    --accent-color: #3498db;        /* リンクや強調に使用する水色 */
+    --bg-main: #f8f9fa;             /* 画面全体の背景色 */
+    --bg-card: #ffffff;             /* 各カードや表の白背景 */
+    --border-color: #e2e8f0;        /* 枠線の薄いグレー */
+    --text-muted: #64748b;          /* 控えめな文字色 */
+    
+    /* キャッチコピーエリアの背景色（ここを変更するとキャッチコピー背景が変わります） */
+    --hero-bg-color: #eef2f7;
+
+    /* レイアウトのサイズ設定 */
+    --sidebar-width: 260px;
+    --header-height: 60px;
+}
+
+/* ==========================================================================
+   2. 基本リセット＆全体設定
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* 目次をクリックした際に滑らかにスクロール */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--bg-main);
+    color: #333333;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   3. ヘッダー
+   ========================================================================== */
+.header {
+    height: var(--header-height);
+    background-color: var(--primary-color);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.sidebar-toggle-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.sidebar-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.site-title {
+    font-size: 18px;
+    margin-left: 16px;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   4. 全体レイアウト＆サイドバー
+   ========================================================================== */
+.layout-wrapper {
+    display: flex;
+    min-height: calc(100vh - var(--header-height));
+    position: relative;
+}
+
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--bg-card);
+    border-right: 1px solid var(--border-color);
+    padding: 20px 16px;
+    transition: transform 0.3s ease, margin-left 0.3s ease;
+    flex-shrink: 0;
+}
+
+/* サイドバーを折りたたんだ状態のスタイル */
+.sidebar.is-collapsed {
+    margin-left: calc(-1 * var(--sidebar-width));
+}
+
+.sidebar-header h2 {
+    font-size: 14px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+/* ジャンル別アコーディオンメニュー */
+.nav-group {
+    margin-bottom: 8px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 8px;
+}
+
+.nav-title {
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 6px 4px;
+    color: var(--primary-color);
+    user-select: none;
+}
+
+.nav-list {
+    list-style: none;
+    padding-left: 12px;
+    margin-top: 4px;
+}
+
+.nav-list li a {
+    display: block;
+    padding: 4px 8px;
+    color: #475569;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.nav-list li a:hover {
+    background-color: #f1f5f9;
+    color: var(--accent-color);
+}
+
+/* ==========================================================================
+   5. メインコンテンツ
+   ========================================================================== */
+.main-content {
+    flex: 1;
+    padding: 24px;
+    max-width: 900px;
+}
+
+/* キャッチコピーエリア */
+.hero-card {
+    display: flex;
+    gap: 20px;
+    background-color: var(--hero-bg-color); /* 背景色変数を使用 */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 24px;
+    align-items: center;
+}
+
+.hero-image-box {
+    width: 140px;
+    height: 140px;
+    background-color: #e2e8f0;
+    border: 2px dashed #cbd5e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 13px;
+    flex-shrink: 0;
+    border-radius: 6px;
+}
+
+.hero-text-box {
+    flex: 1;
+}
+
+.hero-caption {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Wiki風 目次 */
+.wiki-toc {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin-bottom: 32px;
+    display: inline-block;
+    min-width: 240px;
+}
+
+.toc-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 4px;
+}
+
+.toc-list {
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+.toc-list li a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.toc-list li a:hover {
+    text-decoration: underline;
+}
+
+/* コンテンツセクション共通 */
+.content-section {
+    margin-bottom: 36px;
+}
+
+.content-section h2 {
+    font-size: 20px;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 6px;
+    margin-bottom: 16px;
+}
+
+/* ステータステーブル */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.status-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--bg-card);
+}
+
+.status-table th,
+.status-table td {
+    border: 1px solid var(--border-color);
+    padding: 10px 14px;
+    font-size: 14px;
+    text-align: left;
+}
+
+.status-table th {
+    background-color: #f1f5f9;
+    width: 30%;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* 汎用テキストカード */
+.text-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 16px;
+    font-size: 15px;
+}
+
+/* 難所リスト（順列） */
+.stage-list {
+    padding-left: 20px;
+}
+
+.stage-list li {
+    margin-bottom: 16px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 12px 16px;
+    list-style-position: inside;
+}
+
+.stage-title {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-right: 8px;
+}
+
+/* 注釈スペース */
+.annotation-space {
+    background-color: var(--bg-card);
+    border: 1px dashed var(--border-color);
+    border-radius: 6px;
+    padding: 24px;
+    min-height: 80px;
+}
+
+/* ==========================================================================
+   6. レスポンシブ対応（スマホ画面での見た目を調整）
+   ========================================================================== */
+@media (max-width: 768px) {
+    .sidebar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 90;
+        box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+        transform: translateX(0);
+    }
+
+    .sidebar.is-collapsed {
+        transform: translateX(-100%);
+        margin-left: 0;
+    }
+
+    .hero-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-image-box {
+        width: 100%;
+        height: 120px;
+    }
+
+    .main-content {
+        padding: 16px;
+    }
+}

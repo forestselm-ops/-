@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ゲームやり込み備忘録 - 理の賢者ニュトーン</title>
+    <link rel="stylesheet" href="C:\臣匠の小部屋\やり込み用\1.共有\style.css">
+</head>
+<body>
+
+    <!-- ヘッダー（サイドバーを開閉するボタンを配置） -->
+    <header class="header">
+        <button id="sidebar-toggle" class="sidebar-toggle-btn" aria-label="メニュー開閉">
+            <span class="hamburger-icon">☰</span>
+            <span class="btn-label">メニュー</span>
+        </button>
+        <h1 class="site-title">ゲームやり込み備忘録</h1>
+    </header>
+
+    <!-- メインレイアウト（サイドバー＋メインコンテンツ） -->
+    <div class="layout-wrapper">
+
+        <!-- サイドバーエリア -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>ナビゲーション</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <!-- ジャンル：ホーム -->
+                <details class="nav-group" open>
+                    <summary class="nav-title">ホーム</summary>
+                    <ul class="nav-list">
+                        <li><a href="C:\臣匠の小部屋\やり込み用\HOME\home.html">トップページ</a></li>
+                    </ul>
+                </details>
+
+                <!-- ジャンル：編成 -->
+                <details class="nav-group">
+                    <summary class="nav-title">編成</summary>
+                    <ul class="nav-list">
+                        <li><a href="#">NI恒常ステ同一</a></li>
+                        <li><a href="#">編成概論</a></li>
+                    </ul>
+                </details>
+
+                <!-- ジャンル：編成の軌跡 -->
+                <details class="nav-group">
+                    <summary class="nav-title">編成の軌跡</summary>
+                    <ul class="nav-list">
+                        <li><a href="#">NI恒常ステ同一 </a></li>
+                    </ul>
+                </details>
+
+                <!-- ジャンル：味方 -->
+                <details class="nav-group">
+                    <summary class="nav-title">味方</summary>
+                    <ul class="nav-list">
+                        <li><a href="#">常設超激レア</a></li>
+                    </ul>
+                </details>
+
+                <!-- ジャンル：敵 -->
+                <details class="nav-group" open>
+                    <summary class="nav-title">敵</summary>
+                    <ul class="nav-list">
+                             <li><a href="c:\臣匠の小部屋\やり込み用\敵図鑑\赤い敵\RED_ENEMY.html">赤い敵</a></li>
+                             <li><a href="#">浮いてる敵</a></li>
+                             <li><a href="#">黒い敵</a></li>
+                             <li><a href="#">メタルな敵</a></li>
+                             <li><a href="#">天使</a></li>
+                             <li><a href="#">エイリアン</a></li>
+                             <li><a href="#">ゾンビ</a></li>
+                             <li><a href="#">悪魔</a></li>
+                             <li><a href="#">古代種</a></li>
+                             <li><a href="#">無属性な敵</a></li>
+                    </ul>
+                </details>
+
+                <!-- ジャンル：難所 -->
+                <details class="nav-group">
+                    <summary class="nav-title">難所</summary>
+                    <ul class="nav-list">
+                        <li><a href="#">真レジェンド冠３</a></li>
+                        <li><a href="#">零レジェンド</a></li>
+                        <li><a href="#">降臨ステージ</a></li>
+                        <li><a href="#">その他</a></li>
+                    </ul>
+                </details>
+
+                <!-- ジャンル：おまけ掲示板 -->
+                <details class="nav-group">
+                    <summary class="nav-title">おまけ掲示板</summary>
+                    <ul class="nav-list">
+                        <li><a href="#">体力自慢番付</a></li>
+                    </ul>
+                </details>
+            </nav>
+        </aside>
+<div id="sidebar-container"></div>
+        <!-- メイン記事エリア -->
+        <main class="main-content">
+
+            <!-- キャッチコピー＆画像エリア -->
+            <section class="hero-card">
+                <div class="hero-image-box">
+                    <p>ここに画像を添付</p>
+                </div>
+                <div class="hero-text-box">
+                    <p class="hero-caption">「力こそ理なり」</p>
+                </div>
+            </section>
+
+            <!-- Wikipedia風 目次 -->
+            <nav class="wiki-toc">
+                <p class="toc-title">目次</p>
+                <ol class="toc-list">
+                    <li><a href="#section-status">ステータス</a></li>
+                    <li><a href="#section-notes">備考</a></li>
+                    <li><a href="#section-difficult">難所</a></li>
+                    <li><a href="#section-risk">危険度</a></li>
+                    <li><a href="#section-annotations">注釈</a></li>
+                </ol>
+            </nav>
+
+            <!-- ステータスセクション -->
+            <section id="section-status" class="content-section">
+                <h2>ステータス</h2>
+                <div class="table-wrapper">
+                    <table class="status-table">
+                        <tbody>
+                            <tr>
+                                <th>体力</th>
+                                <td>2,000,000</td>
+                            </tr>
+                            <tr>
+                                <th>攻撃力</th>
+                                <td>190,000</td>
+                            </tr>
+                            <tr>
+                                <th>DPS</th>
+                                <td>19,133</td>
+                            </tr>
+                            <tr>
+                                <th>射程</th>
+                                <td>700(-300~1500,範囲)</td>
+                            </tr>
+                            <tr>
+                                <th>攻撃発生</th>
+                                <td>1.93秒</td>
+                            </tr>
+                            <tr>
+                                <th>攻撃頻度</th>
+                                <td>9.93秒</td>
+                            </tr>
+                            <tr>
+                                <th>移動速度</th>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <th>KB</th>
+                                <td>8</td>
+                            </tr>
+                            <tr>
+                                <th>属性</th>
+                                <td>赤い敵・超賢者</td>
+                            </tr>
+                            <tr>
+                                <th>特殊効果</th>
+                                <td>100%の確率で4秒間鈍足</td>
+                            </tr>
+                            <tr>
+                                <th>特性</th>
+                                <td>100%の確率でLv.9の小波動<br>
+                                    体力50%未満で攻撃力1.5倍<br>
+                                    全妨害の効果を70%カット<br>
+                                全方位攻撃
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>よく出る倍率</th>
+                                <td>100%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    ※倍率100％時のステータス。
+                </div>
+            </section>
+
+            <!-- 備考セクション -->
+            <section id="section-notes" class="content-section">
+                <h2>備考</h2>
+                <div class="text-card">
+                    <p>
+                        零レジェンド２体目の超賢者ボス。<br>
+                        19万という即死級の高火力を射程1500までばら撒く火力の権化。その代わり
+
+                    </p>
+                </div>
+            </section>
+
+            <!-- 難所セクション -->
+            <section id="section-difficult" class="content-section">
+                <h2>難所</h2>
+                <ol class="stage-list">
+                    <li>
+                        <span class="stage-title">力を計り得ぬ者</span>
+                        <p>Ver15.51現在、唯一登場するステージ。<br>
+                    　主な取り巻きは80秒間隔で出てくるちびぶんぶんと天使ゴンザレス。それぞれ４体出てくるので、倒し切るかその前にニュトーンを撃破するかの２択になる。
+                    </li>
+                </ol>
+            </section>
+
+            <!-- 危険度セクション -->
+            <section id="section-risk" class="content-section">
+                <h2>危険度・対策</h2>
+                <div class="text-card">
+                    <p>４．５（警戒）<br>
+                射程1500まで届く威力19万の攻撃は流石にアホなのでこの評価。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 注釈セクション -->
+            <section id="section-annotations" class="content-section">
+                <h2>注釈</h2>
+                <div class="annotation-space">
+                    <!-- 必要に応じて注釈テキストや補足情報をここへ挿入 -->
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="C:\臣匠の小部屋\やり込み用\1.共有\script.js"></script>
+</body>
+</html>
